@@ -1,4 +1,4 @@
-# Getting Mac Ready for WebAssembly
+# Getting MacOS Ready for WebAssembly Development
 
 ## Install LLVM
 
