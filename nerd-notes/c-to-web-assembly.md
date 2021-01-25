@@ -1,12 +1,10 @@
-# Sample: C to WebAssembly
-
-- [Source: Hands-on WebAssembly:](https://evilmartians.com/chronicles/hands-on-webassembly-try-the-basics)
+# C to WebAssembly
 
 ## Prerequisites
 
 Make sure you have the WebAssembly related tools installed on your Mac
 
-## Steps
+## C to Web Assembly Tutorial
 
 1. Create a folder for the script
 
@@ -123,3 +121,7 @@ Create an `index.html` file with the following:
 ```bash
 python -m http.server
 ```
+
+## Reference
+
+- [Source: Hands-on WebAssembly:](https://evilmartians.com/chronicles/hands-on-webassembly-try-the-basics)
