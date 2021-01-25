@@ -1,6 +1,18 @@
-# Hackathon (01/2021)
+# World of Web Assembly
 
-## Day 1: Web Assembly/WASM 101
+Hackathon Jan 2021!
+
+## Web Assembly in a Few Words!
+
+**WebAssembly is a virtual instruction set architecture and a binary instruction format for a stack-based virtual machine.**
+
+![Compiler 1](../../images/compiler-visual-1.png)
+
+![Compiler 2](../../images/compiler-visual-2.png)
+
+## Backlog
+
+### Day 1: Web Assembly/WASM 101
 
 - [Hands-On Web Assembly](https://evilmartians.com/chronicles/hands-on-webassembly-try-the-basics) ✅
 - [Safari Live Training: Web Assembly First Steps](https://learning.oreilly.com/live-training/courses/webassembly-first-steps/0636920430827/)
@@ -15,11 +27,11 @@
 - Shopify WebAssembly
   - https://shopify.engineering/shopify-webassembly?itcat=EngML&itterm=MLPost
 
-## Day 2: Rust and WebAssembly
+### Day 2: Rust and WebAssembly
 
 - [Manning: Rust in Motion](https://www.manning.com/livevideo/rust-in-motion)
 - [Manning: Rust in Action](https://livebook.manning.com/book/rust-in-action?origin=product-look-inside)
 
-## Day 3: WebAssembly on the Backend!
+### Day 3: WebAssembly on the Backend!
 
 - None.._Yet!_
