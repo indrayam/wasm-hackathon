@@ -29,16 +29,6 @@
                 ctx.lineTo(coords[2 * i], coords[2 * i + 1]);
             });
             ctx.stroke();
-
-            // If you want to animate your curve, change the last four lines to
-            // [...Array(size)].forEach((_, i) => {
-            //   setTimeout(() => {
-            //     requestAnimationFrame(() => {
-            //       ctx.lineTo(coords[2 * i], coords[2 * i + 1]);
-            //       ctx.stroke();
-            //     });
-            //   }, 100 * i);
-            // });
         });
     </script>
 </body>

@@ -1,4 +1,4 @@
-# C to WebAssembly
+# C to WebAssembly (Pure LLVM)
 
 ## Prerequisites
 
@@ -9,6 +9,9 @@ Make sure you have the WebAssembly related tools installed on your Mac
 1. Create a folder for the script
 
 ```bash
+PROJECT_HOME=$HOME/workspace
+mkdir -p $PROJECT_HOME
+cd $PROJECT_HOME
 mkdir dragon-curve-llvm
 cd dragon-curve-llvm
 ```
