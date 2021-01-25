@@ -6,9 +6,7 @@ Hackathon Jan 2021!
 
 **WebAssembly is a virtual instruction set architecture and a binary instruction format for a stack-based virtual machine.**
 
-![Compiler 1](../../images/compiler-visual-1.png)
-
-![Compiler 2](../../images/compiler-visual-2.png)
+![Compiler 2](https://us-east-1-anand-files.s3.amazonaws.com/compiler-visual-2.png)
 
 ## Backlog
 
