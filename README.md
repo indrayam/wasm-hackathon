@@ -32,17 +32,17 @@ One of the promises of WebAssembly is to remove the boundaries between web appli
 - [Hands-On Web Assembly](https://evilmartians.com/chronicles/hands-on-webassembly-try-the-basics) ✅
 - [Safari Live Training: Web Assembly First Steps](https://learning.oreilly.com/live-training/courses/webassembly-first-steps/0636920430827/) ✅
   - [O'Reilly Book: WebAssembly: The Definitive Guide](https://learning.oreilly.com/library/view/webassembly-the-definitive/9781492089834/ch01.html#wasm_tdg:introduction)
-- [LLVM Architecture](http://www.aosabook.org/en/llvm.html)
+- [LLVM Architecture](http://www.aosabook.org/en/llvm.html) 🚧
   - [asm.js](http://asmjs.org/)
-- [Whitepaper: Bringing the Web up to speed with WebAssembly](https://dl.acm.org/doi/pdf/10.1145/3062341.3062363)
+- [Whitepaper: Bringing the Web up to speed with WebAssembly](https://dl.acm.org/doi/pdf/10.1145/3062341.3062363) 🚧
 - [Webassembly Specs](https://webassembly.org/specs/)
 
 ## Web Assembly/WASM based Client-side Apps
 
+- [Pragmatic Programmers Book: Programming Web Assembly with Rust](https://pragprog.com/titles/khrust/programming-webassembly-with-rust/)
 - [DOM Hello World](https://rustwasm.github.io/docs/wasm-bindgen/examples/dom.html#cargotoml)
 - [Single Page Apps using Rust](http://www.sheshbabu.com/posts/rust-wasm-yew-single-page-application/)
 - [C/C++ based WASM Apps using Emscripten](https://emscripten.org/docs/getting_started/Tutorial.html)
-- [Pragmatic Programmers Book: Programming Web Assembly with Rust](https://pragprog.com/titles/khrust/programming-webassembly-with-rust/)
 
 ## WebAssembly/WASM based Server-side Apps
 
