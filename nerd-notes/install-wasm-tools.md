@@ -70,7 +70,44 @@ brew install binaryen
 
 Binaryen also provides a set of toolchain utilities (`wasm-opt`) that can parse and emit WebAssembly. In particular this lets you load WebAssembly, optimize it using Binaryen, and re-emit it, thus implementing a wasm-to-wasm optimizer in a single command.
 
-## Install wasm-pack
+## Install WASI
+
+WebAssembly System Interface, or WASI, is a new family of API's being designed by the [Wasmtime](https://github.com/bytecodealliance/wasmtime) project to propose as a standard engine-independent non-Web system-oriented API for WebAssembly. Initially, the focus is on WASI Core, an API module that covers files, networking, and a few other things.
+
+WebAssembly is designed to run well on the Web, however it's not limited to the Web. The core WebAssembly language is independent of its surrounding environment, and WebAssembly interacts with the outside world exclusively through APIs. On the Web, it naturally uses the existing Web APIs provided by browsers. However outside of browsers, there's currently no standard set of APIs that WebAssembly programs can be written to. This makes it difficult to create truly portable non-Web WebAssembly programs.
+
+WASI is an initiative to fill this gap, with a clean set of APIs which can be implemented on multiple platforms by multiple engines
+
+### For C only
+
+```bash
+cd ~/Downloads
+wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-12/wasi-sdk-12.0-macos.tar.gz
+tar -xvzf wasi-sdk-12.0-macos.tar.gz
+sudo mv wasi-sdk-12.0 /opt/wasi-sdk
+```
+
+Define WASI_SDK_PATH environment variable in your `.bashrc` (or `.zshrc`)
+
+```bash
+export WASI_SDK_PATH="/opt/wasi-sdk"
+```
+
+### For Rust only
+
+```bash
+rustup target add wasm32-wasi
+```
+
+## Install wasmtime
+
+Wasmtime is a standalone JIT-style runtime for WebAssembly. Think of it as a tool to run Wasm code on the CLI.
+
+```
+curl https://wasmtime.dev/install.sh -sSf | bash
+```
+
+## Install wasm-pack (for Rust only)
 
 **Assumption:**
 
@@ -81,8 +118,6 @@ Binaryen also provides a set of toolchain utilities (`wasm-opt`) that can parse 
 ```bash
 cargo install wasm-pack
 ```
-
-**Update (as of Jan 25th, 2020):** While I did install this, I have so far not played with it.
 
 ## VS Code Extension for WebAssembly
 
