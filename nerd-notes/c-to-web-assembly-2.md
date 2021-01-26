@@ -16,7 +16,7 @@ mkdir dragon-curve-emscripten && cd dragon-curve-emscripten
 cp $PROJECT_HOME/dragon-curve-llvm/dragon-curve.c .
 ```
 
-2. Compile the code using `emcc``:
+2. Compile the code using `emcc`:
 
 ```bash
 emcc dragon-curve.c -Os -o dragon-curve.js \
