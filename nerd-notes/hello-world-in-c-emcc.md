@@ -40,6 +40,8 @@ clang hello.c -S -emit-llvm -o - -O3 | bat
 clang hello.c -S -emit-llvm -o hello.ll -O3
 # Generate assembly code from the IR (hello.s)
 llc hello.ll
+# Generate the architecture-specific machine/binary code
+clang -o hello hello.s
 ```
 
 Reviewing the IR and assembly files give you a sense of how `clang` converts it into LLVM IR which in turn gets converted to assembly code before being compiled down to native machine code.
@@ -50,12 +52,6 @@ What has this got to do with WebAssembly?
 
 ```bash
 emcc hello.c -o hello.wasm
-# OR
-# Generate the Web Assembly version that is ready to be consumed by JavaScript engine.
-# The command below generates a.out.wasm and a.out.js
-# emcc hello.c
-# OR
-# emcc hello.c -s STANDALONE_WASM
 
 ```
 
@@ -86,4 +82,15 @@ If you used `emcc` in a non-standalone mode, you can run the `a.out.js` JavaScri
 
 ```bash
 node a.out.js
+```
+
+## Running it on the Web
+
+Generate the Web Assembly version that is ready to be consumed by JavaScript engine.
+
+```bash
+# The command below generates hellowasm, hello.js and hello.html
+emcc hello.c -o hello.html
+# OR
+# emcc hello.c -s STANDALONE_WASM
 ```
