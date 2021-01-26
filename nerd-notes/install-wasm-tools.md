@@ -99,12 +99,20 @@ export WASI_SDK_PATH="/opt/wasi-sdk"
 rustup target add wasm32-wasi
 ```
 
-## Install wasmtime
+## Install Standalone Wasm Runtimes
+
+### 1. Wasmtime
 
 Wasmtime is a standalone JIT-style runtime for WebAssembly. Think of it as a tool to run Wasm code on the CLI.
 
-```
+```bash
 curl https://wasmtime.dev/install.sh -sSf | bash
+```
+
+### 2. Wasmer
+
+```bash
+curl https://get.wasmer.io -sSfL | sh
 ```
 
 ## Install wasm-pack (for Rust only)

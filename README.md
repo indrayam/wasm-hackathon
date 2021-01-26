@@ -54,6 +54,7 @@ One of the promises of WebAssembly is to remove the boundaries between web appli
   - https://shopify.engineering/shopify-webassembly?itcat=EngML&itterm=MLPost
 - Cloudflare Workers using Rust-generated WebAssembly 🚧
   - [Hello World in Rust](https://developers.cloudflare.com/workers/tutorials/hello-world-rust)
+- [Postgres extension using Wasm](https://medium.com/wasmer/announcing-the-first-postgres-extension-to-run-webassembly-561af2cfcb1)
 
 ## Assorted WebAssembly Apps
 
@@ -64,4 +65,5 @@ One of the promises of WebAssembly is to remove the boundaries between web appli
 - [A WebAssembly Powered Augmented Reality Sudoku Solver](https://blog.scottlogic.com/2020/01/03/webassembly-sudoku-solver.html)
 - [Wasm Explorer](http://mbebenita.github.io/WasmExplorer/)
 - [Wasm Fiddle](https://wasdk.github.io/WasmFiddle/)
+- [WebAssembly Shell](https://webassembly.sh/)
 - [Iodide: Data Science in the browser](https://alpha.iodide.io/)
