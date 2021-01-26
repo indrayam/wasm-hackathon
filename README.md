@@ -12,18 +12,22 @@ Wasm is designed as a portable compilation target for programming languages, ena
 
 ## Backlog
 
-### Day 1: Web Assembly/WASM 101
+### WebAssembly/WASM 101
 
 - [Hands-On Web Assembly](https://evilmartians.com/chronicles/hands-on-webassembly-try-the-basics) ✅
 - [Safari Live Training: Web Assembly First Steps](https://learning.oreilly.com/live-training/courses/webassembly-first-steps/0636920430827/)
+  - [O'Reilly Book: WebAssembly: The Definitive Guide](https://learning.oreilly.com/library/view/webassembly-the-definitive/9781492089834/ch01.html#wasm_tdg:introduction)
+- [LLVM Architecture](http://www.aosabook.org/en/llvm.html)
+  - [asm.js](http://asmjs.org/)
+
+### Web Assembly/WASM based Client-side Apps
+
+- [DOM Hello World](https://rustwasm.github.io/docs/wasm-bindgen/examples/dom.html#cargotoml)
+- [Single Page Apps using Rust](http://www.sheshbabu.com/posts/rust-wasm-yew-single-page-application/)
+- [C/C++ based WASM Apps using Emscripten](https://emscripten.org/docs/getting_started/Tutorial.html)
 - [Pragmatic Programmers Book: Programming Web Assembly with Rust](https://pragprog.com/titles/khrust/programming-webassembly-with-rust/)
 
-### Day 2: Rust and WebAssembly
-
-- [Manning: Rust in Motion](https://www.manning.com/livevideo/rust-in-motion)
-- [Manning: Rust in Action](https://livebook.manning.com/book/rust-in-action?origin=product-look-inside)
-
-### Day 3: Server-side Apps using WebAssembly!
+### WebAssembly/WASM based Server-side Apps
 
 - Envoy:
   - https://www.tetrate.io/blog/introducing-getenvoy-extension-toolkit-for-webassembly-based-envoy-extensions/
@@ -31,3 +35,5 @@ Wasm is designed as a portable compilation target for programming languages, ena
   - https://www.solo.io/blog/the-state-of-webassembly-in-envoy-proxy/?utm_campaign=Product%3A%20Web%20Assembly%20Hub&utm_content=141006978&utm_medium=social&utm_source=twitter&hss_channel=tw-846446677460504576
 - Shopify WebAssembly
   - https://shopify.engineering/shopify-webassembly?itcat=EngML&itterm=MLPost
+- Cloudflare Workers using Rust-generated WebAssembly 🚧
+  - [Hello World in Rust](https://developers.cloudflare.com/workers/tutorials/hello-world-rust)

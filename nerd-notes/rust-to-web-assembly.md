@@ -12,8 +12,8 @@ Make sure you have the WebAssembly, especially `wasm-pack`, installed on your Ma
 PROJECT_HOME=$HOME/workspace
 mkdir -p $PROJECT_HOME
 cd $PROJECT_HOME
-wasm-pack new rust
-cd rust
+wasm-pack new dragon-curve-rust-example
+cd dragon-curve-rust-example
 ```
 
 2. Since `cargo`, Rust's package manager, can pull down dependencies easily, create a standalone Github repo with `dragon_curve` code, as shown [here](https://github.com/indrayam/dragon-curve-rust).
@@ -45,13 +45,13 @@ pub fn dragon_curve(size: u32, len: f64, x0: f64, y0: f64) -> Vec<f64>
 `wasm-pack` has the built-in Webpack support for bundling JavaScript. We set `--target` to `web`. It compiles a Wasm module as well as a JavaScript wrapper as a native ES module:
 
 ```bash
-cd $PROJECT_HOME/rust
+cd $PROJECT_HOME/dragon-curve-rust-example
 wasm-pack build --release --target web
 ```
 
 6. Create a Web Page
 
-Create an `$PROJECT_HOME/rust/index.html` file with the following:
+Create an `$PROJECT_HOME/dragon-curve-rust-example/index.html` file with the following:
 
 ```html
 <!-- index.html -->
@@ -73,7 +73,7 @@ Create an `$PROJECT_HOME/rust/index.html` file with the following:
       Your browser does not support the canvas element.
     </canvas>
     <script type="module">
-      import init, { dragon_curve } from "/pkg/rust.js";
+      import init, { dragon_curve } from "/pkg/dragon_curve_rust_example.js";
       (async function run() {
         await init();
         const size = 2000;
