@@ -49,7 +49,6 @@ One of the promises of WebAssembly is to remove the boundaries between web appli
 ## WebAssembly/WASM based Client-side Apps
 
 - [WebAssembly and Rust: There and Back Again](https://codeburst.io/webassembly-and-rust-there-and-back-again-9ad76f61d616) ✅
-- [DOM Hello World](https://rustwasm.github.io/docs/wasm-bindgen/examples/dom.html#cargotoml)
 - [Single Page Apps using Rust](http://www.sheshbabu.com/posts/rust-wasm-yew-single-page-application/)
 
 ## WebAssembly/WASM based Server-side Apps
