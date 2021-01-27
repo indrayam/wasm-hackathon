@@ -30,9 +30,25 @@ It’s not the first attempt to create a cross-platform runtime. How is WebAssem
 
 Bottom line, **WebAssembly is the IR for the Web, if not more!**
 
-## When to Use WebAssembly
+## Why WebAssembly?
+
+### Code Reuse
 
 One of the promises of WebAssembly is to remove the boundaries between web applications and all other software: mature code-bases developed in different languages can be brought inside the browser with minimal effort. Many projects have already been ported into Wasm, including [games](http://wasm.continuation-labs.com/d3demo/), [image codecs](https://squoosh.app/), machine learning libraries, and even [language runtimes](https://ruby.dj/).
+
+### Source Independence
+
+Write the code in the language that best suits the problem domain
+
+### Performance Benefits
+
+![v8 running JavaScript](https://us-east-1-anand-files.s3.amazonaws.com/v8-executing-js.png)
+
+In the last couple of decades, browsers became very good at running JS, even though it is not that easy to translate JavaScript into effective machine code. All rocket science happens inside browser engines, and this is where the brightest minds of the web compete in compilation techniques. For JavaScript, the main trade-off is between the time of compilation and the time of execution.
+
+![v8 running Wasm](https://us-east-1-anand-files.s3.amazonaws.com/v8-executing-wasm.png)
+
+Wasm makes browser engine’s job much easier: the code already comes in the form of internal representation designed for easy multi-threaded parsing, thanks to the .wasm format. Plus, some optimizations were already baked into a WebAssembly file when we compiled it on a developer’s machine. That means that V8 can compile and execute code immediately without going back and forth with optimizations and deoptimizations as it does for JavaScript.
 
 ## Getting Hands-On with Wasm
 

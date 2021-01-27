@@ -1,5 +1,9 @@
 # Dragon Curve App in Rust compiled using Rust toolchain
 
+## The App
+
+![Dragon Curve](https://us-east-1-anand-files.s3.amazonaws.com/dragon-curve-rust.png)
+
 ## Prerequisites
 
 Make sure you have the WebAssembly, especially `wasm-pack`, installed on your Mac

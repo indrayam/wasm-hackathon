@@ -1,5 +1,9 @@
 # Hello Web in Rust
 
+## The App
+
+![Hello WebAssembly App](https://us-east-1-anand-files.s3.amazonaws.com/hello-webassembly.png)
+
 ## Prerequisites
 
 Make sure you have the WebAssembly, especially `wasm-pack`, installed on your Mac

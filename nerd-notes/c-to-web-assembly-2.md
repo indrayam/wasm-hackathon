@@ -1,5 +1,9 @@
 # Dragon Curve App in C compiled using Emscripten
 
+## The App
+
+![Dragon Curve](https://us-east-1-anand-files.s3.amazonaws.com/dragon-curve-c-emscripten.png)
+
 ## Prerequisites
 
 Make sure you have the WebAssembly related tools installed on your Mac
