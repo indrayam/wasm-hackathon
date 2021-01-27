@@ -13,7 +13,7 @@ PROJECT_HOME=$HOME/workspace
 mkdir -p $PROJECT_HOME
 cd $PROJECT_HOME
 mkdir dragon-curve-emscripten && cd dragon-curve-emscripten
-cp $PROJECT_HOME/dragon-curve-llvm/dragon-curve.c .
+cp $PROJECT_HOME/dragon-curve-clang-llvm/dragon-curve.c .
 ```
 
 2. Compile the code using `emcc`:

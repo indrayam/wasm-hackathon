@@ -1,4 +1,4 @@
-# C to WebAssembly (Pure LLVM)
+# C to WebAssembly (Using Clang/LLVM)
 
 ## Prerequisites
 
@@ -12,14 +12,14 @@ Make sure you have the WebAssembly related tools installed on your Mac
 PROJECT_HOME=$HOME/workspace
 mkdir -p $PROJECT_HOME
 cd $PROJECT_HOME
-mkdir dragon-curve-llvm
-cd dragon-curve-llvm
+mkdir dragon-curve-clang-llvm
+cd dragon-curve-clang-llvm
 ```
 
 2. Your C code:
 
 ```c
-// dragon-curve-llvm/dragon-curve.c
+// dragon-curve-clang-llvm/dragon-curve.c
 #ifndef DRAGON_CURVE
 #define DRAGON_CURVE
 
