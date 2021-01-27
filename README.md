@@ -34,6 +34,16 @@ Bottom line, **WebAssembly is the IR for the Web, if not more!**
 
 One of the promises of WebAssembly is to remove the boundaries between web applications and all other software: mature code-bases developed in different languages can be brought inside the browser with minimal effort. Many projects have already been ported into Wasm, including [games](http://wasm.continuation-labs.com/d3demo/), [image codecs](https://squoosh.app/), machine learning libraries, and even [language runtimes](https://ruby.dj/).
 
+## Getting Hands-On with Wasm
+
+- [1. Getting MacOS ready for WebAssembly Development](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/install-wasm-tools.md)
+- [2. Basics: Compile Hello World in C using `emcc` standalone mode](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-world-in-c-emcc.md)
+- [3. Basics: Compile Hello World in C using `wasi-sdk` (clang/LLVM)](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-world-in-c-wasi-sdk.md)
+- [4. Basics: Compile Hello World in Rust using `wasm32-wasi`](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-world-in-rust.md)
+- [5. Dragon Curve: C to Web Assembly (Using Clang/LLVM)](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/c-to-web-assembly-1.md)
+- [6. Dragon Curve: C to Web Assembly (Using Emscripten)](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/c-to-web-assembly-2.md)
+- [7. Dragon Curve: Rust to Web Assembly](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/rust-to-web-assembly.md)
+
 ## WebAssembly/WASM Reference
 
 - [Hands-On Web Assembly](https://evilmartians.com/chronicles/hands-on-webassembly-try-the-basics) ✅
