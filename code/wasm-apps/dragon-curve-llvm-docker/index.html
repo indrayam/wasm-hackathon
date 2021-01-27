@@ -4,13 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dragon Curve from WebAssembly!</title>
+    <title>Wasm Starter App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.6/semantic.min.css">
+    <style type="text/css">
+        body {
+            /* background-color: #edf6f9; */
+            background-color: #f7fff7;
+            /* background-color: #edf2f4; */
+        }
+
+        body>.grid {
+            height: 100%;
+        }
+    </style>
+    <script type="text/javascript" src="./dragon-curve.js"></script>
 </head>
 
 <body>
-    <canvas id="canvas" width="1920" height="1080" style="border:1px solid #a7a3a3;">
-        Your browser does not support the canvas element.
-    </canvas>
+    <div class="ui container">
+        <h1>Dragon Curve (C+Clang+Docker)!</h1>
+
+        <canvas id="canvas" width="1024" height="1024" style="border:1px solid #a7a3a3;">
+            Your browser does not support the canvas element.
+        </canvas>
+
+    </div>
     <script>
         const size = 2000;
         const len = 10;
@@ -31,16 +49,6 @@
                 ctx.lineTo(coords[2 * i], coords[2 * i + 1]);
             });
             ctx.stroke();
-
-            // If you want to animate your curve, change the last four lines to
-            // [...Array(size)].forEach((_, i) => {
-            //   setTimeout(() => {
-            //     requestAnimationFrame(() => {
-            //       ctx.lineTo(coords[2 * i], coords[2 * i + 1]);
-            //       ctx.stroke();
-            //     });
-            //   }, 100 * i);
-            // });
         });
     </script>
 </body>

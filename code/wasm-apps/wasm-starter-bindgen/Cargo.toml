@@ -1,0 +1,17 @@
+[package]
+name = "wasm-starter"
+version = "0.1.0"
+authors = ["Anand Sharma <anasharm@cisco.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "wasm_starter_bindgen"
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2.70"
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = ["-O2", "--enable-mutable-globals"]

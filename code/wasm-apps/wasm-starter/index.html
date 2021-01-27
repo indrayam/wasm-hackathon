@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasm Starter App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.6/semantic.min.css">
+    <style type="text/css">
+        body {
+            /* background-color: #edf6f9; */
+            /* background-color: #f7fff7; */
+            background-color: #edf2f4;
+        }
+
+        body>.grid {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ui container">
+        <h1>Rust/WebAssembly + DOM Starter!</h1>
+
+        <div class="ui two column grid">
+            <div class="column">
+                <div class="ui raised segment">
+                    <a class="ui red ribbon label">Fibonacci</a>
+                    <p></p>
+                    <p>Calling <code>fibonacci</code> function defined in the WebAssembly module and passing
+                        <code>10</code> returns:
+                    </p>
+                    <i class="thumbs up outline icon green"></i>&nbsp;<span id="message1"></span>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui raised segment">
+                    <a class="ui orange ribbon label">Return String</a>
+                    <p></p>
+                    <p>Calling <code>will_return_string</code> function defined in the WebAssembly module returns:</p>
+                    <i class="thumbs down outline icon red"></i>&nbsp;<span id="message2"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        WebAssembly.instantiateStreaming(fetch('wasm_starter.wasm'), {})
+            .then(wa => {
+                document.getElementById("message1").innerHTML = wa.instance.exports.fibonacci(10);
+                document.getElementById("message2").innerHTML = wa.instance.exports.will_return_string();
+            });
+    </script>
+</body>
+
+</html>

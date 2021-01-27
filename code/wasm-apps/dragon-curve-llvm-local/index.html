@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasm Starter App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.6/semantic.min.css">
+    <style type="text/css">
+        body {
+            /* background-color: #edf6f9; */
+            background-color: #f7fff7;
+            /* background-color: #edf2f4; */
+        }
+
+        body>.grid {
+            height: 100%;
+        }
+    </style>
+    <script type="text/javascript" src="./dragon-curve.js"></script>
+</head>
+
+<body>
+    <div class="ui container">
+        <h1>Dragon Curve (C+Clang/LLVM)!</h1>
+
+        <canvas id="canvas" width="1024" height="1024" style="border:1px solid #a7a3a3;">
+            Your browser does not support the canvas element.
+        </canvas>
+
+    </div>
+    <script>
+        const size = 2000;
+        const len = 10;
+        const x0 = 500;
+        const y0 = 500;
+        WebAssembly.instantiateStreaming(fetch("/dragon-curve.wasm"), {
+            // for this example, we don't import anything
+            imports: {},
+        }).then((obj) => {
+            const { memory, __heap_base, dragonCurve } = obj.instance.exports;
+            dragonCurve(__heap_base, size, len, x0, y0);
+            const coords = new Float64Array(memory.buffer, __heap_base, size);
+            const canvas = document.querySelector("canvas");
+            const ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.moveTo(x0, y0);
+            [...Array(size)].forEach((_, i) => {
+                setTimeout(() => {
+                    requestAnimationFrame(() => {
+                        ctx.lineTo(coords[2 * i], coords[2 * i + 1]);
+                        ctx.stroke();
+                    });
+                }, 100 * i);
+            });
+        });
+    </script>
+</body>
+
+</html>
