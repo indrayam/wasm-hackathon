@@ -88,15 +88,45 @@ Create an `index.html` file with the following:
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Dragon Curve from WebAssembly</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wasm Starter App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.6/semantic.min.css"
+    />
+    <style type="text/css">
+      body {
+        /* background-color: #edf6f9; */
+        background-color: #f7fff7;
+        /* background-color: #edf2f4; */
+      }
+
+      body > .grid {
+        height: 100%;
+      }
+    </style>
+    <script type="text/javascript" src="./dragon-curve.js"></script>
   </head>
+
   <body>
-    <canvas id="canvas" width="1920" height="1080"></canvas>
+    <div class="ui container">
+      <h1>Dragon Curve (C+Clang/LLVM)!</h1>
+
+      <canvas
+        id="canvas"
+        width="1024"
+        height="1024"
+        style="border:1px solid #a7a3a3;"
+      >
+        Your browser does not support the canvas element.
+      </canvas>
+    </div>
     <script>
       const size = 2000;
-      const len = 50;
+      const len = 10;
       const x0 = 500;
       const y0 = 500;
       WebAssembly.instantiateStreaming(fetch("/dragon-curve.wasm"), {
@@ -111,9 +141,14 @@ Create an `index.html` file with the following:
         ctx.beginPath();
         ctx.moveTo(x0, y0);
         [...Array(size)].forEach((_, i) => {
-          ctx.lineTo(coords[2 * i], coords[2 * i + 1]);
+          setTimeout(() => {
+            requestAnimationFrame(() => {
+              ctx.lineTo(coords[2 * i], coords[2 * i + 1]);
+              ctx.stroke();
+            });
+          }, 100 * i);
         });
-        ctx.stroke();
+      });
     </script>
   </body>
 </html>

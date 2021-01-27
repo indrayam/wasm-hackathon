@@ -46,27 +46,48 @@ Create an `index.html` file with the following:
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Dragon Curve from WebAssembly</title>
-  </head>
-  <script type="text/javascript" src="./dragon-curve.js"></script>
-  <body>
-    <canvas
-      id="canvas"
-      width="1920"
-      height="1080"
-      style="border:1px solid #000000;"
-    >
-      Your browser does not support the canvas element.
-    </canvas>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wasm Starter App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.6/semantic.min.css"
+    />
+    <style type="text/css">
+      body {
+        /* background-color: #edf6f9; */
+        background-color: #f7fff7;
+        /* background-color: #edf2f4; */
+      }
 
+      body > .grid {
+        height: 100%;
+      }
+    </style>
+    <script type="text/javascript" src="./dragon-curve.js"></script>
+  </head>
+
+  <body>
+    <div class="ui container">
+      <h1>Dragon Curve (C+Emscripten)!</h1>
+
+      <canvas
+        id="canvas"
+        width="1024"
+        height="1024"
+        style="border:1px solid #a7a3a3;"
+      >
+        Your browser does not support the canvas element.
+      </canvas>
+    </div>
     <script>
       Module().then((instance) => {
         const size = 2000;
         const len = 10;
-        const x0 = 10;
-        const y0 = 10;
+        const x0 = 500;
+        const y0 = 500;
         const canvas = document.querySelector("canvas");
         const ctx = canvas.getContext("2d");
 
