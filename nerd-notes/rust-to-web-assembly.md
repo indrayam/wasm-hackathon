@@ -1,4 +1,4 @@
-# Rust to WebAssembly
+# Dragon Curve App in Rust compiled using Rust toolchain
 
 ## Prerequisites
 

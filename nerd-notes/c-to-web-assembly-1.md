@@ -1,4 +1,4 @@
-# C to WebAssembly (Using Clang/LLVM)
+# Dragon Curve App in C compiled using Clang/LLVM
 
 ## Prerequisites
 

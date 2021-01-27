@@ -1,4 +1,4 @@
-# C to WebAssembly (Using Emscripten)
+# Dragon Curve App in C compiled using Emscripten
 
 ## Prerequisites
 
