@@ -1,6 +1,10 @@
 # World of Web Assembly
 
-Hackathon Jan 2021!
+## Inspiration
+
+Hackathon Jan 2021! Especially, this excerpt from the _Future State Architecture_
+
+![Future State](https://us-east-1-anand-files.s3.amazonaws.com/future-state-excerpt.png)
 
 ## Web Assembly 101
 
