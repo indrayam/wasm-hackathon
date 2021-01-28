@@ -19,11 +19,7 @@ Hackathon Jan 2021! Especially, this excerpt from the _Future State Architecture
 - **2011 till date:** No surprise, Web Standards especially HTML5/CSS3, ECMAScript standardization gets back on track
 - **2010s till date:** JavaScript is the lone ECMAScript "dialect" standing.
 
-  - Corollary: _Being a dynamic language, JavaScript is incapable of certain kinds of optimizations_ that were possible in other languages suchas C or C++. There were simply limits on what was going to be possible from a language-performance perspective. For example, here's an example of a type of optimization specialization called _Type Specialization_. This type of optimization is harder in languages like JavaScript.
-
-    ![JS Optimization 1](https://us-east-1-anand-files.s3.amazonaws.com/javascript-optimization-1.png)
-    ![JS Optimization 2](https://us-east-1-anand-files.s3.amazonaws.com/javascript-optimization-2.png)
-
+  - Corollary: _Being a dynamic language, JavaScript is incapable of certain kinds of optimizations_ that were possible in other languages suchas C or C++. There were simply limits on what was going to be possible from a language-performance perspective.
   - Corollary: _Rise of the (JS) Compilers!_ and _Rise of New Languages (CoffeeScript, Dart, TypeScript, Flow, ClojureScript, etc.) that Transpiles to JavaScript_
   - Corollary: _JavaScript continues to act as the assembly language of the Web!_
 
@@ -33,9 +29,6 @@ Hackathon Jan 2021! Especially, this excerpt from the _Future State Architecture
 - **Nov 2017:** WebAssembly CG members representing four browsers, Chrome, Edge, Firefox, and WebKit, reached consensus that the design of the initial (MVP) WebAssembly API and binary format is complete to the extent that no further design work is possible without implementation experience and significant usage.
 
 ## Web Assembly 101
-
-JavaScript as the _only_ builtin language of the Web is not well-equipped to meet these requirements, especially as a compilation target. However, the maturation of the Web platform has given rise to sophisticated and demanding Web applications such as interactive
-3D visualization, audio and video software, and games.
 
 **WebAssembly (abbreviated `wasm`) is a virtual instruction set architecture and a binary instruction format for a stack-based virtual machine.**
 
@@ -50,7 +43,7 @@ It’s not the first attempt to create a cross-platform runtime. How is WebAssem
 - There’s no single “primary” language as it is the case with Java or dotNet
 - No specialisation: as WebAssembly isn’t a platform, it can be used for anything
 
-## Understanding Compiler Pipeline and importance of IR
+## JavaScript is NOT a good "assembly" code candidate for the Web
 
 #### Traditional Compiler (`gcc`)
 
@@ -64,27 +57,29 @@ It’s not the first attempt to create a cross-platform runtime. How is WebAssem
 
 ![Comparison](https://us-east-1-anand-files.s3.amazonaws.com/tradition-vs-llvm-compiler-comparison.png)
 
-Bottom line, **WebAssembly is positioned well to ultimately become the "assembly" (think, bytecode) for the Web, and perhaps even beyond the Web!**
+#### Dynamic Languages make Optimizations Harder
 
-## Why WebAssembly?
+For example, here's an example of a type of optimization specialization called _Type Specialization_. This type of optimization is harder in languages like JavaScript.
+
+![JS Optimization 1](https://us-east-1-anand-files.s3.amazonaws.com/javascript-optimization-1.png)
+
+![JS Optimization 2](https://us-east-1-anand-files.s3.amazonaws.com/javascript-optimization-2.png)
+
+All major web browsers now support WebAssembly, a low-level bytecode intended to serve as a compilation target for code written in languages like C, C++ and Rust. WebAssembly is being positioned well to ultimately become the _assembly_ for the Web, and perhaps even beyond the Web!
+
+## When to use WebAssembly?
 
 #### Code Reuse
 
 One of the promises of WebAssembly is to remove the boundaries between web applications and all other software: mature code-bases developed in different languages can be brought inside the browser with minimal effort. Many projects have already been ported into Wasm, including [games](http://wasm.continuation-labs.com/d3demo/), [image codecs](https://squoosh.app/), machine learning libraries, and even [language runtimes](https://ruby.dj/).
 
+#### Performance Benefits
+
+Wasm makes browser engine’s job much easier: the code already comes in the form of internal representation designed for easy multi-threaded parsing, thanks to the `.wasm` format. Plus, some optimizations were already baked into a WebAssembly file when we compiled it on a developer’s machine. That means that browser engine (for example, Google **v8**) can compile and execute code immediately without going back and forth with optimizations and deoptimizations as it does for JavaScript.
+
 #### Source Independence
 
 Write the code in the language that best suits the problem domain
-
-#### Performance Benefits
-
-![v8 running JavaScript](https://us-east-1-anand-files.s3.amazonaws.com/v8-executing-js.png)
-
-In the last couple of decades, browsers became very good at running JS, even though it is not that easy to translate JavaScript into effective machine code. All rocket science happens inside browser engines, and this is where the brightest minds of the web compete in compilation techniques. For JavaScript, the main trade-off is between the time of compilation and the time of execution.
-
-![v8 running Wasm](https://us-east-1-anand-files.s3.amazonaws.com/v8-executing-wasm.png)
-
-Wasm makes browser engine’s job much easier: the code already comes in the form of internal representation designed for easy multi-threaded parsing, thanks to the .wasm format. Plus, some optimizations were already baked into a WebAssembly file when we compiled it on a developer’s machine. That means that V8 can compile and execute code immediately without going back and forth with optimizations and deoptimizations as it does for JavaScript.
 
 ## Getting Hands-On with WebAssembly
 
