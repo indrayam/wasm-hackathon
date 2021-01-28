@@ -1,9 +1,10 @@
-; ModuleID = 'hello-func.c'
-source_filename = "hello-func.c"
+; ModuleID = 'hello.c'
+source_filename = "hello.c"
 target datalayout = "e-m:o-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-apple-macosx11.0.0"
 
 @.str = private unnamed_addr constant [25 x i8] c"Sum of %d and %d is %d.\0A\00", align 1
+@.str.1 = private unnamed_addr constant [4 x i8] c"%d\0A\00", align 1
 
 ; Function Attrs: norecurse nounwind readnone ssp uwtable
 define i32 @add(i32 %0, i32 %1) local_unnamed_addr #0 {
@@ -14,6 +15,7 @@ define i32 @add(i32 %0, i32 %1) local_unnamed_addr #0 {
 ; Function Attrs: nofree nounwind ssp uwtable
 define i32 @main() local_unnamed_addr #1 {
   %1 = tail call i32 (i8*, ...) @printf(i8* nonnull dereferenceable(1) getelementptr inbounds ([25 x i8], [25 x i8]* @.str, i64 0, i64 0), i32 2341, i32 1978, i32 4319)
+  %2 = tail call i32 (i8*, ...) @printf(i8* nonnull dereferenceable(1) getelementptr inbounds ([4 x i8], [4 x i8]* @.str.1, i64 0, i64 0), i32 10395)
   ret i32 0
 }
 

@@ -33,6 +33,10 @@ _main:                                  ## @main
 	movl	$4319, %ecx                     ## imm = 0x10DF
 	xorl	%eax, %eax
 	callq	_printf
+	leaq	L_.str.1(%rip), %rdi
+	movl	$10395, %esi                    ## imm = 0x289B
+	xorl	%eax, %eax
+	callq	_printf
 	xorl	%eax, %eax
 	popq	%rbp
 	retq
@@ -41,5 +45,8 @@ _main:                                  ## @main
 	.section	__TEXT,__cstring,cstring_literals
 L_.str:                                 ## @.str
 	.asciz	"Sum of %d and %d is %d.\n"
+
+L_.str.1:                               ## @.str.1
+	.asciz	"%d\n"
 
 .subsections_via_symbols
