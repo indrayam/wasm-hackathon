@@ -10,14 +10,23 @@ Hackathon Jan 2021! Especially, this excerpt from the _Future State Architecture
 
 - **Late 1994:** Netscape Communications Corporation (formerly Mosaic Communications Corp) launches _Netscape Navigator_ browser!
 - **May-Dec 1995:** Mocha/LiveScript leads to JavaScript 1.0
-- **Late 1990s:** Java Applets, Microsoft ActiveX, Macromedia (later, Adobe) Flash. Run in a memory space separate from the browser DOM
+- **Late 1990s:** Java Applets, Microsoft ActiveX, Macromedia (later, Adobe) Flash (ActionScript). **They mostly ran in a walled off memory space separate from the browser DOM**
 - **Late 1990s and early 2000s:** JavaScript, Microsoft JScript, VBScript
 - **1997 to 2003:** ECMAScript (ECMA-262). Work paused from 2003 to 2009.
 - **2002:** Mozilla Firefox launched
 - **2005:** Ajax term coined! (XHR Requests explained!)
 - **2008:** Google Chrome launched
 - **2011 till date:** No surprise, Web Standards especially HTML5/CSS3, ECMAScript standardization gets back on track
-- **2010s till date:** JavaScript is the lone ECMAScript "dialect" standing. But the language itself was incapable of the kinds of optimizations that were possible in other languages suchas C or C++. There were simply limits on what was going to be possiblefrom a language-performance perspective. Plus, we have a **single** language to write code in!
+- **2010s till date:** JavaScript is the lone ECMAScript "dialect" standing.
+
+  - Corollary: _Being a dynamic language, JavaScript is incapable of certain kinds of optimizations_ that were possible in other languages suchas C or C++. There were simply limits on what was going to be possible from a language-performance perspective. For example, here's an example of a type of optimization specialization called _Type Specialization_. This type of optimization is harder in languages like JavaScript.
+
+    ![JS Optimization 1](https://us-east-1-anand-files.s3.amazonaws.com/javascript-optimization-1.png)
+    ![JS Optimization 2](https://us-east-1-anand-files.s3.amazonaws.com/javascript-optimization-2.png)
+
+  - Corollary: _Rise of the (JS) Compilers!_ and _Rise of New Languages (TypeScript, ClojureScript) that Transpiles to JavaScript_
+  - Corollary: _JavaScript continues to act as the assembly language of the Web!_
+
 - **2011:** Google launches Native Client (NaCl). The idea was to provide near-native execution speed in the browser while running in a limited privilege sandbox for safety reasons. Think, ActiveX, but with some real security this time :wink: The initial focus was on C and C++ as source languages, but because it was based upon the LLVM compiler toolchain, it would be possible to support additional languages that could generate the LLVM IR.
 - **2013:** Mozilla launches `asm.js` keeping their focus on JavaScript. Why? By this time, the browser ecosystem was alreadyadvancing to make 2D and 3D graphics, audio handling,hardware-accelerated video and more available in standards-based,cross-platform ways. The idea was that operating within thatenvironment would allow applications to use any of those featureswhich were defined to be invoked from JavaScript. The JavaScriptengines were efficient and had robust sandboxed environments that hadundergone significant security audits so no one felt like starting fromscratch there. **The real issue remained the inability to optimize JavaScript ahead-of-time (AoT) so runtime performance could beimproved even further.**
 - **2015:** Brendan Eich, the creator of Javascript, [announces](https://brendaneich.com/2015/06/from-asm-js-to-webassembly/) that work started on WebAssembly. _"Yes, we are aiming to develop the Web’s polyglot-programming-language object-file format.."_ Who is working on it? Google, Mozilla, Microsoft, Apple, Figma, Adobe, AutoCAD, Unity etc.
