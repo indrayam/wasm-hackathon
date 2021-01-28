@@ -130,8 +130,8 @@ Create an `$PROJECT_HOME/hello-webassembly-c/index.html` file with the following
 5. Start a web server and see the app magically call your C functions!
 
 ```bash
-cargo install miniserve
-miniserve . --index index.html -p 8080 -v
+python3 -m http.server
 # OR
-# python3 -m http.server
+# cargo install miniserve
+# miniserve . --index index.html -p 8080 -v
 ```
