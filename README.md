@@ -45,6 +45,12 @@ It’s not the first attempt to create a cross-platform runtime. How is WebAssem
 
 ## JavaScript is NOT a good "assembly" for the Web
 
+The LLVM Project is a collection of modular and reusable compiler and toolchain technologies. Despite its name, LLVM has little to do with traditional virtual machines.
+
+The thing that makes LLVM different from other compiler is really the _IR_. LLVM’s intermediate representation (IR) is its great innovation. LLVM works on a representation of programs that you can actually read if you can read assembly. This may not seem like a great revelation, but it is: other compilers’ IRs tend to be in-memory structures so complicated that you can’t really write them down. This makes other compilers harder to understand and messier to implement.
+
+Also, LLVM is nicely written: its architecture is way more modular than other compilers.
+
 #### Traditional Compiler (`gcc`)
 
 ![Traditional Compiler](https://us-east-1-anand-files.s3.amazonaws.com/traditional-compiler.png)

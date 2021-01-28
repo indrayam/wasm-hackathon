@@ -5,12 +5,6 @@
 - [Reference: Using the Latest LLVM Release on MacOS](https://afnan.io/posts/2018-10-01-using-the-latest-llvm-release-on-macos/)
 - [Reference: Building LLVM on OSX](http://bholt.org/posts/building-llvm.html)
 
-The LLVM Project is a collection of modular and reusable compiler and toolchain technologies. Despite its name, LLVM has little to do with traditional virtual machines.
-
-The thing that makes LLVM different from other compiler is really the _IR_. LLVM’s intermediate representation (IR) is its great innovation. LLVM works on a representation of programs that you can actually read if you can read assembly. This may not seem like a great revelation, but it is: other compilers’ IRs tend to be in-memory structures so complicated that you can’t really write them down. This makes other compilers harder to understand and messier to implement.
-
-Also, LLVM is nicely written: its architecture is way more modular than other compilers.
-
 ```bash
 brew install llvm
 ```
