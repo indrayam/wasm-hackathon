@@ -125,6 +125,10 @@ curl https://get.wasmer.io -sSfL | sh
 
 ```bash
 cargo install wasm-pack
+# Optional
+# cargo install wasm-gc
+# standalone web server, if you need
+# cargo install miniserve
 ```
 
 ## VS Code Extension for WebAssembly
