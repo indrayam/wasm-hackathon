@@ -4,8 +4,8 @@ pub fn add(num1: u32, num2: u32) -> u32 {
 
 fn main() {
     // calling a function
-    let num1: u32 = 10;
-    let num2: u32 = 20;
+    let num1: u32 = 2341;
+    let num2: u32 = 1978;
     println!("Sum of {} and {} is {}", num1, num2, add(num1, num2));
 
     // looping
@@ -17,6 +17,6 @@ fn main() {
             result += item * 11;
         }
     }
-    println!("Value at the end of the loop is {}", result);
+    println!("{}", result);
 
 }
