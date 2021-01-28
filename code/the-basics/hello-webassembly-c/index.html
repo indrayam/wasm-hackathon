@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, WebAssembly (in Rust)!</title>
+    <title>Hello, WebAssembly (in C)!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.6/semantic.min.css">
     <style type="text/css">
         body {
@@ -21,7 +21,7 @@
 
 <body>
     <div class="ui container">
-        <h1>Hello, WebAssembly (in Rust)!</h1>
+        <h1>Hello, WebAssembly (in C)!</h1>
 
         <div class="ui two column grid">
             <div class="column">
@@ -45,19 +45,20 @@
 
         </div>
     </div>
-    <script type="module">
-        import init, { fibonacci, flatter } from './pkg/hello_webassembly_rust.js';
-
-        async function run() {
-            await init();
-            document.getElementById("message1").innerHTML = fibonacci(10);
-            document.getElementById("message2").innerHTML = flatter();
-            console.log(fibonacci(10));
-            console.log(flatter());
-        }
-
-        run();
+    <script type="text/javascript">
+        // called when the runtime is ready
+        var Module = {
+            onRuntimeInitialized: function () {
+                var sum = Module.ccall("fibonacci", null, "number", [10]);
+                var content = Module.ccall("flatter", "string");
+                document.getElementById("message1").innerHTML = sum;
+                document.getElementById("message2").innerHTML = content;
+                console.log(sum);
+                console.log(content);
+            }
+        };
     </script>
+    <script async type="text/javascript" src="hello-webassembly.js"></script>
 </body>
 
 </html>

@@ -24,7 +24,7 @@ Hackathon Jan 2021! Especially, this excerpt from the _Future State Architecture
     ![JS Optimization 1](https://us-east-1-anand-files.s3.amazonaws.com/javascript-optimization-1.png)
     ![JS Optimization 2](https://us-east-1-anand-files.s3.amazonaws.com/javascript-optimization-2.png)
 
-  - Corollary: _Rise of the (JS) Compilers!_ and _Rise of New Languages (TypeScript, ClojureScript) that Transpiles to JavaScript_
+  - Corollary: _Rise of the (JS) Compilers!_ and _Rise of New Languages (CoffeeScript, Dart, TypeScript, Flow, ClojureScript, etc.) that Transpiles to JavaScript_
   - Corollary: _JavaScript continues to act as the assembly language of the Web!_
 
 - **2011:** Google launches Native Client (NaCl). The idea was to provide near-native execution speed in the browser while running in a limited privilege sandbox for safety reasons. Think, ActiveX, but with some real security this time :wink: The initial focus was on C and C++ as source languages, but because it was based upon the LLVM compiler toolchain, it would be possible to support additional languages that could generate the LLVM IR.
@@ -80,54 +80,30 @@ In the last couple of decades, browsers became very good at running JS, even tho
 
 Wasm makes browser engine’s job much easier: the code already comes in the form of internal representation designed for easy multi-threaded parsing, thanks to the .wasm format. Plus, some optimizations were already baked into a WebAssembly file when we compiled it on a developer’s machine. That means that V8 can compile and execute code immediately without going back and forth with optimizations and deoptimizations as it does for JavaScript.
 
-## Getting Hands-On with Wasm
+## Getting Hands-On with WebAssembly
 
-- [1. Getting MacOS ready for WebAssembly Development](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/install-wasm-tools.md) ✅
-- [2. Basics: Compile _Hello World_ in C to Wasm binary using `emcc` standalone mode](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-world-in-c-emcc.md) ✅
-- [3. Basics: Compile _Hello World_ in C to Wasm binary using `wasi-sdk` (Clang/LLVM)](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-world-in-c-wasi-sdk.md) ✅
-- [4. Basics: Compile _Hello World_ in Rust to Wasm binary using `wasm32-wasi`](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-world-in-rust.md) ✅
+### Prerequisites
+
+- [Getting MacOS ready for WebAssembly Development](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/install-wasm-tools.md) ✅
+
+### The Basics
+
+- [1. Basics: Compile _Hello World_ in C to Wasm binary using `emcc` standalone mode](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-world-in-c-emcc.md) ✅
+- [2. Basics: Compile _Hello World_ in C to Wasm binary using `wasi-sdk` (Clang/LLVM)](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-world-in-c-wasi-sdk.md) ✅
+- [3. Basics: Compile _Hello World_ in Rust to Wasm binary using `wasm32-wasi`](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-world-in-rust.md) ✅
+- [4. Basics: Create _Hello WebAssembly_ single page app that loads a Wasm module written in C](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-web-in-c.md) ✅
 - [5. Basics: Create _Hello WebAssembly_ single page app that loads a Wasm module written in Rust](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-web-in-rust.md) ✅
-- [5. Dragon Curve App in C compiled using Clang/LLVM](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/c-to-web-assembly-1.md) ✅
-- [6. Dragon Curve App in C compiled using Emscripten](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/c-to-web-assembly-2.md) ✅
-- [7. Dragon Curve App in Rust compiled using Rust toolchain](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/rust-to-web-assembly.md) ✅
 
-## WebAssembly/WASM Reference
+### Dragon Curve App
 
-- [Hands-On Web Assembly](https://evilmartians.com/chronicles/hands-on-webassembly-try-the-basics) ✅
-- [Level Up with WebAssembly](https://levelupwasm.com/) 🚧
-- [Safari Live Training: Web Assembly First Steps](https://learning.oreilly.com/live-training/courses/webassembly-first-steps/0636920430827/) ✅
-- [O'Reilly Book: WebAssembly: The Definitive Guide](https://learning.oreilly.com/library/view/webassembly-the-definitive/9781492089834/ch01.html#wasm_tdg:introduction)
-- [Pragmatic Programmers Book: Programming Web Assembly with Rust] 🚧(https://pragprog.com/titles/khrust/programming-webassembly-with-rust/)
-- [LLVM Architecture](http://www.aosabook.org/en/llvm.html) 🚧
-  - [asm.js](http://asmjs.org/)
-- [Whitepaper: Bringing the Web up to speed with WebAssembly](https://dl.acm.org/doi/pdf/10.1145/3062341.3062363) 🚧
-- [Webassembly Specs](https://webassembly.org/specs/)
+- [1. Dragon Curve App in C compiled using Clang/LLVM](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/c-to-web-assembly-1.md) ✅
+- [2. Dragon Curve App in C compiled using Emscripten](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/c-to-web-assembly-2.md) ✅
+- [3. Dragon Curve App in Rust compiled using Rust toolchain](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/rust-to-web-assembly.md) ✅
 
-## WebAssembly/WASM based Client-side Apps
-
-- [WebAssembly and Rust: There and Back Again](https://codeburst.io/webassembly-and-rust-there-and-back-again-9ad76f61d616) ✅
-- [Single Page Apps using Rust](http://www.sheshbabu.com/posts/rust-wasm-yew-single-page-application/)
-
-## WebAssembly/WASM based Server-side Apps
-
-- Envoy:
-  - https://www.tetrate.io/blog/introducing-getenvoy-extension-toolkit-for-webassembly-based-envoy-extensions/
-  - https://www.youtube.com/playlist?list=PLBOtlFtGznBiZ9blEk6XHCWnDFdjrM6XT
-  - https://www.solo.io/blog/the-state-of-webassembly-in-envoy-proxy/?utm_campaign=Product%3A%20Web%20Assembly%20Hub&utm_content=141006978&utm_medium=social&utm_source=twitter&hss_channel=tw-846446677460504576
-- Kubernetes:
-  - [Kubernetes + WebAssembly: A New Architecture for Serverless](https://www.youtube.com/watch?v=xgnBvotLgpU)
-- Serveless:
-  - [Serverless Rust with with AWS Lambda and WebAssembly](https://blog.scottlogic.com/2018/10/18/serverless-rust.html)
-  - [Cloudflare Workers using Rust-generated WebAssembly](https://developers.cloudflare.com/workers/tutorials/hello-world-rust)
-- Data:
-  - [Postgres extension using Wasm](https://medium.com/wasmer/announcing-the-first-postgres-extension-to-run-webassembly-561af2cfcb1)
-- Others:
-  - [How Shopify Uses WebAssembly Outside of the Browser](https://shopify.engineering/shopify-webassembly?itcat=EngML&itterm=MLPost)
-
-## Assorted and Amazing WebAssembly Apps!
+## Amazing WebAssembly Apps!
 
 - [jq playground written in WebAssembly](https://www.jqkungfu.com/)
-- [Clang in web browser](https://tbfleming.github.io/cib/)
+- [Assorted C/C++ code in browser](https://tbfleming.github.io/)
 - [MRuby in your browser](https://ruby.dj/)
 - [Mono.NET Blazor demo app](https://blazor-demo.github.io/Counter)
 - [A WebAssembly Powered Augmented Reality Sudoku Solver](https://blog.scottlogic.com/2020/01/03/webassembly-sudoku-solver.html)
@@ -136,12 +112,9 @@ Wasm makes browser engine’s job much easier: the code already comes in the for
 - [WebAssembly Shell](https://webassembly.sh/)
 - [Iodide: Data Science in the browser](https://alpha.iodide.io/)
 - [Fastly Terrarium](https://wasm.fastlylabs.com/)
+- [Google Earth](https://www.google.com/earth/)
+- [AutoCAD](https://web.autocad.com)
 
-## Companies/Startups Investing in WebAssembly
+## ..more
 
-- [Google](https://developers.google.com/web/updates/tags/webassembly)
-- [Wasmer](https://wasmer.io/)
-- [Second State](https://www.secondstate.io/)
-- [solo.io](https://www.solo.io/blog/the-state-of-webassembly-in-envoy-proxy/)
-- [Fastly](https://www.fastly.com/blog/how-fastly-and-developer-community-invest-in-webassembly-ecosystem)
-- [Cloudflare](https://developers.cloudflare.com/workers/tutorials/hello-world-rust)
+[References](References.md)
