@@ -91,8 +91,8 @@ Wasm makes browser engine’s job much easier: the code already comes in the for
 - [1. Compile _Hello World_ in C to Wasm binary using `emcc` standalone mode](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-world-in-c-emcc.md) ✅
 - [2. Compile _Hello World_ in C to Wasm binary using `wasi-sdk` (Clang/LLVM)](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-world-in-c-wasi-sdk.md) ✅
 - [3. Compile _Hello World_ in Rust to Wasm binary using `wasm32-wasi`](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-world-in-rust.md) ✅
-- [4. Create _Hello WebAssembly_ single page app that loads a Wasm module written in C](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-web-in-c.md) ✅
-- [5. Create _Hello WebAssembly_ single page app that loads a Wasm module written in Rust](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-web-in-rust.md) ✅
+- [4. Create _Hello WebAssembly_ single page app that loads a Wasm module written in C](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-webassembly-in-c.md) ✅
+- [5. Create _Hello WebAssembly_ single page app that loads a Wasm module written in Rust](https://github.com/indrayam/wasm-hackathon/blob/main/nerd-notes/hello-webassembly-in-rust.md) ✅
 
 ### Dragon Curve App
 
