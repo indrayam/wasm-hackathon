@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <emscripten.h>
 
 char *flatter()
 {
@@ -14,5 +13,6 @@ int add(int num1, int num2)
 int main()
 {
     printf("%s\n", flatter());
+    printf("%d\n", add(10, 20));
     return 0;
 }

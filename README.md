@@ -52,25 +52,31 @@ It’s not the first attempt to create a cross-platform runtime. How is WebAssem
 
 ## Understanding Compiler Pipeline and importance of IR
 
-![Compiler 2](https://us-east-1-anand-files.s3.amazonaws.com/compiler-visual-1.png)
+#### Traditional Compiler (`gcc`)
 
-![LLVM Architecture](https://us-east-1-anand-files.s3.amazonaws.com/llvm-architecture.png)
+![Traditional Compiler](https://us-east-1-anand-files.s3.amazonaws.com/traditional-compiler.png)
 
-![Wasm as IR for the Web](https://us-east-1-anand-files.s3.amazonaws.com/wasm-as-ir.png)
+#### LLVM Compiler Tools
 
-Bottom line, **WebAssembly is the IR for the Web, if not more!**
+![LLVM Compiler](https://us-east-1-anand-files.s3.amazonaws.com/llvm-compiler.png)
+
+#### Tradional vs Modern Compiler
+
+![Comparison](https://us-east-1-anand-files.s3.amazonaws.com/tradition-vs-llvm-compiler-comparison.png)
+
+Bottom line, **WebAssembly is positioned well to ultimately become the "assembly" (think, bytecode) for the Web, and perhaps even beyond the Web!**
 
 ## Why WebAssembly?
 
-### Code Reuse
+#### Code Reuse
 
 One of the promises of WebAssembly is to remove the boundaries between web applications and all other software: mature code-bases developed in different languages can be brought inside the browser with minimal effort. Many projects have already been ported into Wasm, including [games](http://wasm.continuation-labs.com/d3demo/), [image codecs](https://squoosh.app/), machine learning libraries, and even [language runtimes](https://ruby.dj/).
 
-### Source Independence
+#### Source Independence
 
 Write the code in the language that best suits the problem domain
 
-### Performance Benefits
+#### Performance Benefits
 
 ![v8 running JavaScript](https://us-east-1-anand-files.s3.amazonaws.com/v8-executing-js.png)
 
