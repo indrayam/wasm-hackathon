@@ -6,7 +6,7 @@
 
 ## Prerequisites
 
-Make sure you have the WebAssembly related tools installed on your Mac
+Make sure you have the WebAssembly related tools installed on your Mac.
 
 ## C to Web Assembly Tutorial
 

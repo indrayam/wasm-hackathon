@@ -1,82 +1,58 @@
-# Hello Web in Rust
+# Hello WebAssembly (in C)
 
 ## The App
 
-![Hello WebAssembly App](https://us-east-1-anand-files.s3.amazonaws.com/hello-webassembly.png)
+![Hello WebAssembly App](https://us-east-1-anand-files.s3.amazonaws.com/hello-webassembly-in-c.png)
 
 ## Prerequisites
 
-Make sure you have the WebAssembly, especially `wasm-pack`, installed on your Mac
+Make sure you have the WebAssembly related tools installed on your Mac.
 
-## Rust to Web Assembly Tutorial
+## C to WebAssembly Tutorial
 
-1. Use `cargo` to setup a basic Rust project
+1. Setup a folder for your C code as follows:
 
 ```bash
 PROJECT_HOME=$HOME/workspace
 mkdir -p $PROJECT_HOME
 cd $PROJECT_HOME
-mkdir new hello-webassembly-rust
-cd hello-webassembly-rust
-cargo init --lib
+mkdir new hello-webassembly-c
+cd hello-webassembly-c
 ```
 
-2. Update the `Cargo.toml` file with the following content:
+2. Create `hello-webassembly.c` file:
 
-```toml
-[package]
-name = "hello-webassembly-rust"
-version = "0.1.0"
-authors = ["Anand Sharma <anasharm@cisco.com>"]
-edition = "2018"
+Let's create two simple C functions that we will call from the web page
 
-[lib]
-name = "hello_webassembly_rust"
-crate-type = ["cdylib"]
+```c
+#include <stdio.h>
+#include <emscripten.h>
 
-[dependencies]
-wasm-bindgen = "0.2.70"
-
-[package.metadata.wasm-pack.profile.release]
-wasm-opt = ["-O2", "--enable-mutable-globals"]
-```
-
-3. Update `src/lib.rs`
-
-Let's create two simple Rust functions that we will call from the web page
-
-```rust
-use wasm_bindgen::prelude::wasm_bindgen;
-
-#[wasm_bindgen]
-pub fn fibonacci(n: u32) -> u32 {
-    match n {
-        0 | 1 => 1,
-        _ => fibonacci(n - 1) + fibonacci(n - 2),
-    }
+int fibonacci(int n)
+{
+    if (n <= 1)
+        return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-#[wasm_bindgen]
-pub fn will_return_string() -> String {
-    String::from("EngIT/EDaaS Hackathon rocks!")
+char *flatter()
+{
+    return "EngIT/EDaaS rocks!";
 }
-
 ```
 
-4. Compile
+3. Compile
 
-`wasm-pack` has the built-in Webpack support for bundling JavaScript. We set `--target` to `web`. It compiles a Wasm module as well as a JavaScript wrapper as a native ES module:
+Use Emscripten Compiler toolchain (`emcc`) to compile the above code:
 
 ```bash
-cd $PROJECT_HOME/hello-webassembly-rust
-wasm-pack build --target web
+cd $PROJECT_HOME/hello-webassembly-c
+emcc -s EXPORTED_FUNCTIONS="['_fibonacci', '_flatter']" -s "EXTRA_EXPORTED_RUNTIME_METHODS=['ccall']" hello-webassembly.c -o hello-webassembly.js
 ```
 
-Unlike running `cargo` build, the result is generated in the `pkg` folder. If you look inside, it is an `npm` package with all the javascript boilerplate.
+4. Create a Web Page
 
-6. Create a Web Page
-
-Create an `$PROJECT_HOME/dragon-curve-rust/index.html` file with the following:
+Create an `$PROJECT_HOME/hello-webassembly-c/index.html` file with the following:
 
 ```html
 <!DOCTYPE html>
@@ -84,15 +60,13 @@ Create an `$PROJECT_HOME/dragon-curve-rust/index.html` file with the following:
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wasm Starter App</title>
+    <title>Hello, WebAssembly (in C)!</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.6/semantic.min.css"
     />
     <style type="text/css">
       body {
-        /* background-color: #edf6f9; */
-        /* background-color: #f7fff7; */
         background-color: #edf2f4;
       }
 
@@ -104,7 +78,7 @@ Create an `$PROJECT_HOME/dragon-curve-rust/index.html` file with the following:
 
   <body>
     <div class="ui container">
-      <h1>Hello, WebAssembly (in Rust)!</h1>
+      <h1>Hello, WebAssembly (in C)!</h1>
 
       <div class="ui two column grid">
         <div class="column">
@@ -122,11 +96,11 @@ Create an `$PROJECT_HOME/dragon-curve-rust/index.html` file with the following:
         </div>
         <div class="column">
           <div class="ui raised segment">
-            <a class="ui orange ribbon label">Return String</a>
+            <a class="ui orange ribbon label">Flatter</a>
             <p></p>
             <p>
-              Calling <code>will_return_string</code> function defined in the
-              WebAssembly module returns:
+              Calling <code>flatter</code> function defined in the WebAssembly
+              module without passing any parameter returns:
             </p>
             <i class="thumbs up outline icon green"></i>&nbsp;<span
               id="message2"
@@ -135,29 +109,29 @@ Create an `$PROJECT_HOME/dragon-curve-rust/index.html` file with the following:
         </div>
       </div>
     </div>
-    <script type="module">
-      import init, {
-        fibonacci,
-        will_return_string,
-      } from "./pkg/hello_webassembly_rust.js";
-
-      async function run() {
-        await init();
-        document.getElementById("message1").innerHTML = fibonacci(10);
-        document.getElementById("message2").innerHTML = will_return_string();
-        console.log(fibonacci(10));
-        console.log(will_return_string());
-      }
-
-      run();
+    <script type="text/javascript">
+      // called when the runtime is ready
+      var Module = {
+        onRuntimeInitialized: function () {
+          var sum = Module.ccall("fibonacci", null, "number", [10]);
+          var content = Module.ccall("flatter", "string");
+          document.getElementById("message1").innerHTML = sum;
+          document.getElementById("message2").innerHTML = content;
+          console.log(sum);
+          console.log(content);
+        },
+      };
     </script>
+    <script async type="text/javascript" src="hello-webassembly.js"></script>
   </body>
 </html>
 ```
 
-7. Start a web server and see the dragon curve:
+5. Start a web server and see the app magically call your C functions!
 
 ```bash
 cargo install miniserve
 miniserve . --index index.html -p 8080 -v
+# OR
+# python3 -m http.server
 ```

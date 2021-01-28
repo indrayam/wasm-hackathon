@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Make sure you have the WebAssembly related tools installed on your Mac, especially [Emscripten](https://emscripten.org/) compiler toolchain and [Wasmtime](https://wasmtime.dev/), a small and efficient runtime for WebAssembly & WASI
+Make sure you have the WebAssembly related tools installed on your Mac, especially [Emscripten](https://emscripten.org/) compiler toolchain and [Wasmtime](https://wasmtime.dev/), a small and efficient runtime for WebAssembly & WASI.
 
 ## Tutorial
 

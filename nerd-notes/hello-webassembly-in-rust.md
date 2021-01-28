@@ -1,14 +1,14 @@
-# Hello Web in Rust
+# Hello WebAssembly (in Rust)
 
 ## The App
 
-![Hello WebAssembly App](https://us-east-1-anand-files.s3.amazonaws.com/hello-webassembly.png)
+![Hello WebAssembly App](https://us-east-1-anand-files.s3.amazonaws.com/hello-webassembly-in-rust.png)
 
 ## Prerequisites
 
-Make sure you have the WebAssembly, especially `wasm-pack`, installed on your Mac
+Make sure you have the WebAssembly related tools installed on your Mac.
 
-## Rust to Web Assembly Tutorial
+## Rust to WebAssembly Tutorial
 
 1. Use `cargo` to setup a basic Rust project
 
@@ -77,7 +77,7 @@ Unlike running `cargo` build, the result is generated in the `pkg` folder. If yo
 
 6. Create a Web Page
 
-Create an `$PROJECT_HOME/dragon-curve-rust/index.html` file with the following:
+Create an `$PROJECT_HOME/hello-webassembly-c/index.html` file with the following:
 
 ```html
 <!DOCTYPE html>
@@ -127,7 +127,7 @@ Create an `$PROJECT_HOME/dragon-curve-rust/index.html` file with the following:
             <p></p>
             <p>
               Calling <code>flatter</code> function defined in the WebAssembly
-              module returns:
+              module without passing any parameter returns:
             </p>
             <i class="thumbs up outline icon green"></i>&nbsp;<span
               id="message2"
@@ -156,9 +156,11 @@ Create an `$PROJECT_HOME/dragon-curve-rust/index.html` file with the following:
 </html>
 ```
 
-7. Start a web server and see the dragon curve:
+7. Start a web server and see the magically call your Rust functions!
 
 ```bash
 cargo install miniserve
 miniserve . --index index.html -p 8080 -v
+# OR
+# python3 -m http.server
 ```

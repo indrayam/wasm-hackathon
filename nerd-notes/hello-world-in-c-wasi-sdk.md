@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Make sure you have the WebAssembly related tools installed on your Mac, especially [wasi-sdk](https://github.com/WebAssembly/wasi-sdk), WASI-enabled WebAssembly C/C++ toolchain and [Wasmtime](https://wasmtime.dev/), a small and efficient runtime for WebAssembly & WASI
+Make sure you have the WebAssembly related tools installed on your Mac, especially [wasi-sdk](https://github.com/WebAssembly/wasi-sdk), WASI-enabled WebAssembly C/C++ toolchain and [Wasmtime](https://wasmtime.dev/), a small and efficient runtime for WebAssembly & WASI.
 
 **Note:**
 Upstream Clang and LLVM (from 9.0 onwards) can compile for WASI out of the box, and WebAssembly support is included in them by default. `wasi-sdk` provides Clang and LLVM builds configured to set the default target and sysroot for convenience.
