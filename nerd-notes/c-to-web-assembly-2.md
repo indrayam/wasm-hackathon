@@ -130,4 +130,4 @@ python -m http.server
 
 ## Reference
 
-- [Source: Hands-on WebAssembly:](https://evilmartians.com/chronicles/hands-on-webassembly-try-the-basics)
+- [Source: Hands-on WebAssembly](https://evilmartians.com/chronicles/hands-on-webassembly-try-the-basics)

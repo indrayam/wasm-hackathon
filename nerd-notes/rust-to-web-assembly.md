@@ -170,4 +170,4 @@ miniserve . --index index.html -p 8080 -v
 
 ## Reference
 
-- [Source: Hands-on WebAssembly:](https://evilmartians.com/chronicles/hands-on-webassembly-try-the-basics)
+- [Source: Hands-on WebAssembly](https://evilmartians.com/chronicles/hands-on-webassembly-try-the-basics)
