@@ -16,12 +16,12 @@ Hackathon Jan 2021! Especially, this excerpt from the _Future State Architecture
 - **2002:** Mozilla Firefox launched
 - **2005:** Ajax term coined! (XHR Requests explained!)
 - **2008:** Google Chrome launched
-- **2011 till date:** No surprise, Web Standards especially HTML5/CSS3, ECMAScript standardization gets back on track
+- **2011 till date:** With Google Chrome and Mozilla Firefox dominating the browser wars, Web Standards especially HTML5/CSS3, ECMAScript standardization gets back on track
 - **2010s till date:** JavaScript is the lone ECMAScript "dialect" standing.
 
-  - Corollary: _Being a dynamic language, JavaScript is incapable of certain kinds of optimizations_ that were possible in other languages suchas C or C++. There were simply limits on what was going to be possible from a language-performance perspective.
-  - Corollary: _Rise of the (JS) Compilers!_ and _Rise of New Languages (CoffeeScript, Dart, TypeScript, Flow, ClojureScript, etc.) that Transpiles to JavaScript_
-  - Corollary: _JavaScript continues to act as the assembly language of the Web!_
+  - Corollary: Being a dynamic language, JavaScript is **incapable of certain kinds of optimizations** that were possible in other languages suchas C or C++. There were simply limits on what was going to be possible from a language-performance perspective.
+  - Corollary: **Rise of the (JavaScript) Compilers (Google v8, SpiderMonkey, JavaScriptCore/Webkit and Chakra)!** and **Rise of New Languages** (TypeScript, ClojureScript, etc.) and Transpilers that convert to JavaScript
+  - Corollary: **JavaScript continues to be THE assembly language of the Web!**
 
 - **2011:** Google launches Native Client (NaCl). The idea was to provide near-native execution speed in the browser while running in a limited privilege sandbox for safety reasons. Think, ActiveX, but with some real security this time :wink: The initial focus was on C and C++ as source languages, but because it was based upon the LLVM compiler toolchain, it would be possible to support additional languages that could generate the LLVM IR.
 - **2013:** Mozilla launches `asm.js` keeping their focus on JavaScript. Why? By this time, the browser ecosystem was already advancing to make 2D and 3D graphics, audio handling,hardware-accelerated video and more available in standards-based, cross-platform ways. The idea was that operating within that environment would allow applications to use any of those features which were defined to be invoked from JavaScript. The JavaScript engines were efficient and had robust sandboxed environments that had undergone significant security audits so no one felt like starting from scratch there. **The real issue remained the inability to optimize JavaScript ahead-of-time (AoT) so runtime performance could beimproved even further.**
@@ -43,7 +43,7 @@ It’s not the first attempt to create a cross-platform runtime. How is WebAssem
 - There’s no single “primary” language as it is the case with Java or dotNet
 - No specialisation: as WebAssembly isn’t a platform, it can be used for anything
 
-## JavaScript is NOT a good "assembly" code candidate for the Web
+## JavaScript is NOT a good "assembly" for the Web
 
 #### Traditional Compiler (`gcc`)
 
@@ -65,19 +65,19 @@ For example, here's an example of a type of optimization specialization called _
 
 ![JS Optimization 2](https://us-east-1-anand-files.s3.amazonaws.com/javascript-optimization-2.png)
 
-All major web browsers now support WebAssembly, a low-level bytecode intended to serve as a compilation target for code written in languages like C, C++ and Rust. WebAssembly is being positioned well to ultimately become the _assembly_ for the Web, and perhaps even beyond the Web!
+All major web browsers now support WebAssembly as a low-level bytecode intended to serve as a compilation target for code written in languages like C, C++ and Rust. WebAssembly is being positioned well to ultimately become the _assembly_ for the Web, and perhaps even beyond the Web!
 
-## When to use WebAssembly?
+## Good use-cases for WebAssembly
 
-#### Code Reuse
+#### 1. Reuse existing code for Web Consumption
 
 One of the promises of WebAssembly is to remove the boundaries between web applications and all other software: mature code-bases developed in different languages can be brought inside the browser with minimal effort. Many projects have already been ported into Wasm, including [games](http://wasm.continuation-labs.com/d3demo/), [image codecs](https://squoosh.app/), machine learning libraries, and even [language runtimes](https://ruby.dj/).
 
-#### Performance Benefits
+#### 2. Near native performance of Wasm modules makes new types of applications possible
 
 Wasm makes browser engine’s job much easier: the code already comes in the form of internal representation designed for easy multi-threaded parsing, thanks to the `.wasm` format. Plus, some optimizations were already baked into a WebAssembly file when we compiled it on a developer’s machine. That means that browser engine (for example, Google **v8**) can compile and execute code immediately without going back and forth with optimizations and deoptimizations as it does for JavaScript.
 
-#### Source Independence
+#### 3. JavaScript is no longer the only game in town for Web!
 
 Write the code in the language that best suits the problem domain
 
