@@ -11,10 +11,10 @@ int main()
     int num1 = 2341;
     int num2 = 1978;
     int sum = add(num1, num2);
+    printf("Sum of %d and %d is %d.\n", num1, num2, sum);
 
     // Loop through some numbers
     int result = 0;
-    printf("Sum of %d and %d is %d.\n", num1, num2, sum);
     for (int i = 0; i < 100; ++i)
     {
         if (i > 10)
