@@ -6,7 +6,7 @@ Hackathon Jan 2021! Especially, this excerpt from the _Future State Architecture
 
 ![Future State](https://us-east-1-anand-files.s3.amazonaws.com/future-state-excerpt.png)
 
-## Chronological Journey: From JavaScript to WebAssembly
+## From JavaScript to WebAssembly: A Chronological Look
 
 - **Late 1994:** Netscape Communications Corporation (formerly Mosaic Communications Corp) launches _Netscape Navigator_ browser!
 - **May-Dec 1995:** Mocha/LiveScript leads to JavaScript 1.0
