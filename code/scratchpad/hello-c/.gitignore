@@ -3,3 +3,4 @@ hello.s
 hello.bc
 hello
 hello.wasm
+hello.wat
