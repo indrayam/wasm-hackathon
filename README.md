@@ -73,7 +73,7 @@ For example, here's an example of a type of optimization specialization called _
 
 All major web browsers now support WebAssembly as a low-level bytecode intended to serve as a compilation target for code written in languages like C, C++ and Rust. WebAssembly is being positioned well to ultimately become the _assembly_ for the Web, and perhaps even beyond the Web!
 
-## Good use-cases for WebAssembly
+## Good Use Cases for WebAssembly..._For Now!_
 
 #### 1. Reuse existing code for Web Consumption
 
